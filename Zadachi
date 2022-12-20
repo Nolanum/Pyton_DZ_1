@@ -1,0 +1,17 @@
+print('Введите координаты Х и Y')
+x, y = int(input()), int(input())
+if x > 0 and y > 0:
+    print('1')
+elif x < 0 and y > 0:
+    print('2')
+elif x < 0 and y < 0:
+    print('3')
+elif x > 0 and y < 0:
+    print('4')
+else:
+    if x == 0 and y != 0:
+        print('Точка на оси Y')
+    elif x != 0 and y == 0:
+        print('Точка на оси X')
+    else:
+        print('Точка в центре осей координат')
