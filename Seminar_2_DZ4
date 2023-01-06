@@ -1,0 +1,22 @@
+print('Введите кол-во элементов списка:')
+n = int(input())
+startspisok, spisokprove, result = [], [], []
+for k in range(n):
+    print("Введите элемент №", k+1, ":")
+    startspisok.append(str(input()))
+for k in range(n):
+    spisokprove.append(k)
+import random
+while spisokprove != []:
+    check = random.randint(0, n)
+    if check in spisokprove:
+        result.append(startspisok[check])
+        spisokprove.remove(check)
+print("Введенный список [" + str(startspisok[0]), end= "")
+for k in range(1, n):
+    print(", ", startspisok[k], end="")
+print("]")
+print("Перемешанный список [" + str(result[0]), end= "")
+for k in range(1, n):
+    print(", ", result[k], end="")
+print("]")
