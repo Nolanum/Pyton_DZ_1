@@ -1,0 +1,20 @@
+# 1 Задайте список из вещественных чисел. Напишите программу, которая найдёт разницу
+# между максимальным и минимальным значением дробной части элементов.
+# Пример:
+# - [1.1, 1.2, 3.1, 5, 10.01] => 0.19
+import random
+randomspisok, resultspisok = [], []
+n, drmin, drmax = random.randint(3, 6), 1, 0
+for k in range(n):
+    randomspisok.append(random.randint(0, 999)/100)
+print("Cформирован случайный список [" + str(randomspisok[0]), end="")
+for k in range(1, n):
+    print(", ", randomspisok[k], end="")
+print("]")
+for k in range(0, n):
+    if randomspisok[k] % 1 != 0.00:
+        if randomspisok[k] % 1 < drmin:
+            drmin = randomspisok[k] % 1
+        if randomspisok[k] % 1 > drmax:
+            drmax = randomspisok[k] % 1
+print("Результат вычислений", round(drmax, 2), "-", round(drmin, 2), "=", round(drmax-drmin, 2))
