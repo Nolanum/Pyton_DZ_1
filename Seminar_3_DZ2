@@ -1,0 +1,21 @@
+# 1 Напишите программу, которая найдёт произведение пар чисел списка. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
+#Пример:
+# - [2, 3, 4, 5, 6] => [12, 15, 16];
+# - [2, 3, 5, 6] => [12, 15]
+import random
+randomspisok, resultspisok = [], []
+n = random.randint(3, 10)
+for k in range(n):
+    randomspisok.append(random.randint(0, 9))
+print("Cформирован случайный список [" + str(randomspisok[0]), end="")
+for k in range(1, n):
+    print(", ", randomspisok[k], end="")
+print("]")
+for k in range(0, n // 2):
+    resultspisok.append(int(randomspisok[k]) * int(randomspisok[-1 - k]))
+if n % 2 == 1:
+    resultspisok.append(randomspisok[(n//2)]**2)
+print("Список - результат произв. пар чисел списка [" + str(resultspisok[0]), end="")
+for k in range(1, len(resultspisok)):
+    print(", ", resultspisok[k], end="")
+print("]")
