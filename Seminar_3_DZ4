@@ -1,0 +1,16 @@
+# Напишите программу, которая будет преобразовывать десятичное число в двоичное.
+# Пример:
+# - 45 -> 101101
+# - 3 -> 11
+# - 2 -> 10
+
+import random
+n = random.randint(1, 99)
+result = 0
+print("Выбрано случайное число:", n)
+delimoe, por= n, 1
+while int(delimoe) != 0:
+    result += (delimoe % 2) * por
+    por *= 10
+    delimoe = delimoe // 2
+print(result)
