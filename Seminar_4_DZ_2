@@ -1,0 +1,23 @@
+# 1 Задайте последовательность чисел. Напишите программу, которая выведет
+# список неповторяющихся элементов исходной последовательности.
+import random
+randomspisok, resultspisok = [], []
+n = random.randint(8, 16)
+for k in range(n):
+    randomspisok.append(random.randint(0, 9))
+print("Задана случайная последовательность чисел: " + str(randomspisok[0]), end="")
+for k in range(1, n):
+    print(", ", randomspisok[k], end="")
+print(";")
+proverka, x = randomspisok[0], 0
+for k in randomspisok:
+    x = 0
+    for i in resultspisok:
+        if i == k:
+            x = 1
+    if x == 0:
+        resultspisok.append(k)
+print("Итоговый список уникальных значений: [" + str(resultspisok[0]), end="")
+for k in range(1, len(resultspisok)):
+    print(", ", resultspisok[k], end="")
+print("];")
